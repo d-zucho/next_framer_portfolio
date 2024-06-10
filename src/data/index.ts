@@ -5,9 +5,18 @@ export const navItems = [
   { name: 'Contact', link: '#contact' },
 ]
 
-export const gridItems = [
+export const GRID_ITEMS: {
+  id: string
+  title: string
+  description: string
+  className: string
+  imgClassName: string
+  titleClassName: string
+  img: string
+  spareImg?: string
+}[] = [
   {
-    id: 1,
+    id: '1',
     title: 'I prioritize client collaboration, fostering open communication ',
     description: '',
     className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]',
@@ -17,7 +26,7 @@ export const gridItems = [
     spareImg: '',
   },
   {
-    id: 2,
+    id: '2',
     title: "I'm very flexible with time zone communications",
     description: '',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
@@ -27,7 +36,7 @@ export const gridItems = [
     spareImg: '',
   },
   {
-    id: 3,
+    id: '3',
     title: 'My tech stack',
     description: 'I constantly try to improve',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
@@ -37,7 +46,7 @@ export const gridItems = [
     spareImg: '',
   },
   {
-    id: 4,
+    id: '4',
     title: 'Tech enthusiast with a passion for development.',
     description: '',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
@@ -48,7 +57,7 @@ export const gridItems = [
   },
 
   {
-    id: 5,
+    id: '5',
     title: 'Currently building a JS Animation library',
     description: 'The Inside Scoop',
     className: 'md:col-span-3 md:row-span-2',
@@ -58,7 +67,7 @@ export const gridItems = [
     spareImg: '/grid.svg',
   },
   {
-    id: 6,
+    id: '6',
     title: 'Do you want to start a project together?',
     description: '',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
