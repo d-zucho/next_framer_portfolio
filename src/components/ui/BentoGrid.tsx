@@ -7,6 +7,8 @@ import { GridGlobe } from './GridGlobe'
 import { div } from 'three/examples/jsm/nodes/Nodes.js'
 import Lottie from 'react-lottie'
 import animationData from '@/data/confetti.json'
+import MagicButton from './MagicButton'
+import { IoCopyOutline } from 'react-icons/io5'
 
 const LEFT_LIST = ['React.js', 'Next,js', 'TypeScript']
 const RIGHT_LIST = ['Vue.js', 'MongoDB', 'AWS']
@@ -35,8 +37,7 @@ export const BentoGridItem = ({
   id,
   title,
   description,
-  header,
-  icon,
+
   imgClassName,
   img,
   spareImg,
@@ -55,6 +56,20 @@ export const BentoGridItem = ({
 }) => {
   //state for lottie animation
   const [copied, setCopied] = useState(false)
+
+  const defaultOptions = {
+    loop: copied,
+    autoplay: copied,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('danny.nicodev@gmail.com')
+    setCopied(true)
+  }
 
   return (
     <div
@@ -103,7 +118,7 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'
+            'group-hover/bento:translate-x-2 transition duration-200 relative  min-h-40 flex flex-col px-5 p-5 lg:p-10 mx-auto'
           )}
         >
           <div className='font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10 dark:text-neutral-300'>
@@ -146,18 +161,26 @@ export const BentoGridItem = ({
 
           {id === '6' && (
             <div className='mt-5 relative'>
-              <div className={`absolute -bottom-5 right-0`}>
-                <Lottie
-                  options={{
-                    loop: copied,
-                    autoplay: copied,
-                    animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: 'xMidYMid slice',
-                    },
-                  }}
-                />
+              {/* button border magic from tailwind css buttons  */}
+              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
+              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
+              {/* add handleCopy() for the copy the text */}
+              <div
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? 'block' : 'block'
+                }`}
+              >
+                {/* <img src="/confetti.gif" alt="confetti" /> */}
+                <Lottie options={defaultOptions} height={200} width={400} />
               </div>
+
+              <MagicButton
+                title={copied ? 'Email is Copied!' : 'Copy my email address'}
+                icon={<IoCopyOutline />}
+                position='left'
+                handleClick={handleCopy}
+                otherClasses='!bg-[#161A31]'
+              />
             </div>
           )}
         </div>
