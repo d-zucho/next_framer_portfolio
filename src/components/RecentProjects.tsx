@@ -7,7 +7,7 @@ import { PinContainer } from './ui/3d-pin'
 
 const RecentProjects = () => {
   return (
-    <div className='py-20'>
+    <section id='projects' className='py-20'>
       <h1 className='heading'>
         A small selection of{' '}
         <span className='text-purple'>recent projects</span>
@@ -76,7 +76,7 @@ const RecentProjects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -19,7 +19,6 @@ const Grid = () => {
           />
         ))}
       </BentoGrid>
-      <p>grid</p>
     </section>
   )
 }
