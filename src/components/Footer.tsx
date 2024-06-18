@@ -5,13 +5,13 @@ import { socialMedia } from '@/data'
 const Footer = () => {
   return (
     <footer className='w-full pt-20 pb-20' id='contact'>
-      <div className='w-full absolute left-0 -b-72 min-h-96'>
+      {/* <div className='w-full absolute left-0 -b-72 min-h-96'>
         <img
           src='/footer-grid.svg'
           alt='grid'
           className='w-full h-full opacity-50'
         />
-      </div>
+      </div> */}
 
       <div className='flex flex-col items-center'>
         <h1 className='heading lg:max-w-[45vw]'>
@@ -34,7 +34,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className='flex mt-16 md:flex-row flex-col justify-between items-center'>
+      <div className='flex mt-16 md:flex-row flex-col justify-between items-center gap-4 md:gap-0'>
         <p className='md:text-base text-sm font-light'>
           Copyright &copy; 2024 Danny
         </p>
